@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+  <style>
+    #lightbox{
+      background-color: #4b4b4b;
+    }
+    #knob-container{
+      margin: 0 auto;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="lightbox">
+    &nbsp;
+  </div>
+  <div id="knob-container">
+    <input id="red" type="text" data-min="0" data-max="256" value="75" data-displayInput="true" data-width="300px" class="dial" data-fgColor="#ff0000">
+    <input id="green" type="text" data-min="0" data-max="256" value="75" data-displayInput="true" data-width="300px" class="dial" data-fgColor="#00ff00">
+    <input id="blue" type="text" data-min="0" data-max="256" value="75" data-displayInput="true" data-width="300px" class="dial" data-fgColor="#0000ff">
+  </div>
+  <script>
+    var color = '#4b4b4b';
+    $(function() {
+        $('#red').knob({
+          'change': function(v){
+            var red = parseInt(v).toString(16);
+            color = color.split('');
+            color.splice(1, 2, red)
+            color = color.join('');
+            $('#lightbox').css({'background-color': color});
+          }
+      });
+    });
+    $(function() {
+        $('#green').knob({
+          'change': function(v){
+            var green = parseInt(v).toString(16);
+            color = color.split('');
+            color.splice(3, 2, green);
+            color = color.join('');
+            $('#lightbox').css({'background-color': color});
+          }
+      });
+    });
+    $(function() {
+        $('#blue').knob({
+          'change': function(v){
+            var blue = parseInt(v).toString(16);
+            color = color.split('');
+            color.splice(5, 2, blue);
+            color = color.join('');
+            $('#lightbox').css({'background-color': color});
+          }
+      });
+    });
+    </script>
+</body>
+</html>

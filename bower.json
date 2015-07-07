@@ -1,0 +1,19 @@
+{
+  "name": "knob-demo",
+  "version": "0.0.1",
+  "authors": [
+    "Jon Edwards <jkedwards@me.com>"
+  ],
+  "description": "concept demo of a jQuery knob",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-knob": "~1.2.11"
+  }
+}
